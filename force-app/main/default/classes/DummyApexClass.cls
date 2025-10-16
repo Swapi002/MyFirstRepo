@@ -33,4 +33,8 @@ public with sharing class DummyApexClass {
         }
         return inputStr.toUpperCase();
     }
+
+    public static lstCont getContacts() {
+        return [SELECT Id, Name, Phone FROM Contact LIMIT 5];
+    }
 }
