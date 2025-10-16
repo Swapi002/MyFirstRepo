@@ -1,5 +1,5 @@
 public with sharing class DummyApexClass {
-    
+
     // Simple method to return greeting message
     public static String getGreeting(String name) {
         if (String.isBlank(name)) {
@@ -19,5 +19,18 @@ public with sharing class DummyApexClass {
     // Example method to query accounts
     public static List<Account> getAccounts() {
         return [SELECT Id, Name, Phone FROM Account LIMIT 5];
+    }
+
+    // 🔹 Method to count number of Accounts
+    public static Integer countAccounts() {
+        return [SELECT COUNT() FROM Account];
+    }
+
+    // 🔹 Method to return uppercase of a string
+    public static String toUpperCase(String inputStr) {
+        if (String.isBlank(inputStr)) {
+            return '';
+        }
+        return inputStr.toUpperCase();
     }
 }
